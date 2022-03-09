@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Conversor de Medidas</title>
+</head>
+<body>
+    <h1>Desafio do conversor de medidas</h1>
+    <input type="button" value="Converter" onclick="Clicar()">
+    <section>
+        <h1 id="res"></h1>
+        <p id="km"></p>
+        <p id="hc"></p>
+        <p id="dam"></p>
+        <p id="dm"></p>
+        <p id="cm"></p>
+        <p id="mm"></p>
+    </section>
+<script>
+    function Clicar() {
+        met = window.prompt('Digite uma distância em metros (m):')
+        tot = document.getElementById('res')
+        km = document.getElementById('km')
+        hc = document.getElementById('hc')
+        dam = document.getElementById('dam')
+        dm = document.getElementById('dm')
+        cm = document.getElementById('cm')
+        mm = document.getElementById('mm')
+        qui = Number(met) * 1000
+        hec = Number(met) * 100
+        dec = Number(met) * 10
+        dcm = Number(met) / 10
+        cem = Number(met) / 100
+        mmi = Number(met) / 1000
+        tot.innerHTML = `A distância de ${met} metros, correponde a...`
+        km.innerHTML = `${qui.toFixed(2)} quilômetros (km)`
+        hc.innerHTML = `${hec.toFixed(2)} hectômetros (Hm)`
+        dam.innerHTML = `${dec.toFixed(2)} decâmetros (Dam)`
+        dm.innerHTML = `${dcm.toFixed(2)} decímetros (dm)`
+        cm.innerHTML = `${cem.toFixed(2)} centínetros (cm)`
+        mm.innerHTML = `${mmi.toFixed(2)} milímetros`
+    }
+</script>
+</body>
+</html>

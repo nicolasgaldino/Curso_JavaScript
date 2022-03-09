@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="Clicar()">
+    <section>
+        <h1 id="res"></h1>
+        <p id="kel"></p>
+        <p id="fah"></p>
+    </section>
+<script>
+    function Clicar() {
+        temp = window.prompt('Digite uma temperatura em Celsius:')
+        tot = Number(temp) + 273
+        tot1 = Number(temp) * 1.8 + 32
+        txt = document.getElementById('res')
+        kel = document.getElementById('kel')
+        fal = document.getElementById('fah')
+        txt.innerHTML = `A temperatura de ${temp} Celsius, corresponde a...`
+        kel.innerHTML = `${tot.toFixed(2)} Kelvin`
+        fah.innerHTML = `${tot1.toFixed(2)} Fahrenheit`
+    }
+</script>
+</body>
+</html>

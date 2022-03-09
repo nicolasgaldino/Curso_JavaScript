@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Antes e Depois</title>
+</head>
+<body>
+    <h1>Desafio antes e depois</h1>
+    <input type="button" value="Antes e Depois" onclick="Clicar()">
+<script>
+    function Clicar() {
+        num = window.prompt('Digite um número qualqer:')
+        ant = Number(num) - 1
+        suc = Number(num) + 1
+        window.alert(`O número ${num} tem como: \nantecessor: ${ant}; \nsucessor: ${suc}.`)
+    }
+</script>
+</body>
+</html>

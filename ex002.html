@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Boas-vindas</title>
+</head>
+<body>
+    <h1>Desafio Boas-vindas</h1>
+    <input type="button" value="Inicie o desafio" onclick="Clicar()">
+<script>
+    function Clicar() {
+        nome = window.prompt('Olá, qual seu nome?')
+        idade = window.prompt('Quantos anos você tem?')
+        window.alert(`Olá ${nome}, você tem ${idade}! É um prazer te conhecer.`)
+    }
+</script>
+</body>
+</html>

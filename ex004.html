@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Cálculo de Troco</title>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <input type="button" value="Comprar Produto" onclick="Clicar()">
+<script>
+    function Clicar() {
+        pro = window.prompt('Qual produto você está comprando?')
+        val = window.prompt(`Quanto custa esse ${pro} que você está comprando?`)
+        din = window.prompt(`Quanto em dinheiro você pagou por esse ${pro}?`)
+        tot = Number(din) - Number(val)
+        window.alert(`Você comprou ${pro}, que custa R$${val} \nVocê pagou R$${din}, e receberá R$${tot.toFixed(2)} de troco. \nVolte sempre!`)
+
+    }
+</script>
+</body>
+</html>
