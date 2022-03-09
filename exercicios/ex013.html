@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="icon/logo-javascript.svg"
+      type="image/x-icon"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+    <title>Preço Mudou</title>
+  </head>
+  <body>
+    <h1>Preço Mudou</h1>
+    <input type="button" value="Verificar" onclick="Clicar()" />
+    <section>
+      <p id="res">Clique no botão acima para analisar a mudança de preço.</p>
+      <h1 id="txt1"></h1>
+      <p id="txt2"></p>
+      <p id="txt3"></p>
+      <p id="txt4"></p>
+      <p id="txt5"></p>
+    </section>
+    <script>
+      function Clicar() {
+        anter = window.prompt("Qual era o preço anterior do produto?");
+        atual = window.prompt("Qual é o preço atual?");
+        ant = Number(anter);
+        atu = Number(atual);
+        res = document.getElementById("res");
+        txt1 = document.getElementById("txt1");
+        txt2 = document.getElementById("txt2");
+        txt3 = document.getElementById("txt3");
+        txt4 = document.getElementById("txt4");
+        txt5 = document.getElementById("txt5");
+        res.innerHTML = "";
+        txt1.innerHTML = "Analisando os valores informados...";
+        if (atu > ant) {
+          a1 = atu - ant;
+          a2 = a1 / ant;
+          a3 = a2 * 100;
+          txt2.innerHTML = `O produto custava R$${anter} e agora custa R$${atual}.`;
+          txt3.innerHTML = "Hoje o produto está mais caro.";
+          txt4.innerHTML = `O preço subiu R$${a1} em relação ao preço anterior.`;
+          txt5.innerHTML = `Uma variação de ${a3.toFixed(2)}% para cima.`;
+        } else if (atu < ant) {
+          a1 = ant - atu;
+          a2 = ant / atu;
+          a3 = a2 - 1;
+          a4 = a3 * 100;
+          txt2.innerHTML = `O produto custava R$${anter} e agora custa R$${atual}.`;
+          txt3.innerHTML = "Hoje o produto está mais barato.";
+          txt4.innerHTML = `O preço caiu R$${a1} em relação ao preço anterior.`;
+          txt5.innerHTML = `Uma variação de ${a4.toFixed(2)}% para cima.`;
+        }
+      }
+    </script>
+  </body>
+</html>

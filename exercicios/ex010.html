@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Fórmula de Bahskara</title>
+</head>
+<body>
+    <h1>Resolvendo Bahskara</h1>
+    <input type="button" value="Calcular" onclick="Clicar()">
+    <section>
+        <p id="res">Considerando uma equação no formato ax² + bx + c = 0, aperte o botão acima para calcular o valor de Δ.</p>
+        <h1 id="txt1"></h1>
+        <p id="txt2"></p>
+        <p id="txt3"></p>
+        <p id="txt4"></p>
+    </section>
+<script>
+    function Clicar() {
+        a = window.prompt('Digite o valor de a:')
+        b = window.prompt('Digite o valor de b:')
+        c = window.prompt("digite o valor de c:")
+        tot = (Number(b) * Number(b)) - 4 * Number(a) * Number(c)
+        res = document.getElementById('res')
+        txt1 = document.getElementById('txt1')
+        txt2 = document.getElementById('txt2')
+        txt3 = document.getElementById('txt3')
+        txt4 = document.getElementById('txt4')
+        res.innerHTML = ''
+        txt1.innerHTML = `Calculando o valor...`
+        txt2.innerHTML = `A equação atual é ${a}x² + ${b}x + ${c} = 0`
+        txt3.innerHTML = `O cálculo realizado será Δ = ${b}² - 4 x ${a} x ${c}`
+        txt4.innerHTML = `O valor calculado foi Δ = ${tot}`
+    }
+</script>
+</body>
+</html>

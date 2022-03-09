@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Situação do Aluno</title>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="Clicar()">
+    <section>
+        <p id="res">Clique no botão acima para informar as notas do(a) aluno(a).</p>
+        <h1 id="txt1"></h1>
+        <p id="txt2"></p>
+        <p id="txt3"></p>
+    </section>
+<script>
+    function Clicar() {
+        nome = window.prompt('Informe o nome do(a) aluno(a):')
+        nota1 = window.prompt(`Primeira nota do(a) ${nome}`)
+        nota2 = window.prompt(`Segunda nota do(a) ${nome}`)
+        tot = (Number(nota1) + Number(nota2)) / 2
+        res = document.getElementById('res')
+        txt1 = document.getElementById('txt1')
+        txt2 = document.getElementById('txt2')
+        txt3 = document.getElementById('txt3')
+        res.innerHTML = ''
+        txt1.innerHTML = `Analisando a situação de ${nome}...`
+        if (tot < 3) {
+            txt2.innerHTML = `Com as notas ${nota1} e ${nota2} a média é ${tot}`
+            txt3.innerHTML = `Sua média está abaixo de 3.0 você está reprovado(a)`
+        } else if (tot == 3 || tot < 6) {
+            txt2.innerHTML = `Com as notas ${nota1} e ${nota2} a média é ${tot}`
+            txt3.innerHTML = `Sua média está entre 3.0 e 6.0 você está em recuperação.`
+        } else {
+            txt2.innerHTML = `Com as notas ${nota1} e ${nota2} a média é ${tot}`
+            txt3.innerHTML = `Sua média está acima de 6.0 você está aprovado(a)`
+        }
+    }
+</script>
+</body>
+</html>

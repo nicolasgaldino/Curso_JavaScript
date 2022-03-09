@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Cáculo de Desconto</title>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="Clicar()">
+    <section>
+        <h1 id="txt1"></h1>
+        <p id="txt2"></p>
+        <p id="txt3"></p>
+        <p id="txt4"></p>
+    </section>
+<script>
+    function Clicar() {
+        pro = window.prompt('Qual é o produto que você está comprando?')
+        val = window.prompt(`Qual é o preço do ${pro}?`)
+        a1 = Number(val)
+        nub = (a1 * 10) / 100
+        tot = a1 - nub
+        txt1 = document.getElementById('txt1')
+        txt2 = document.getElementById('txt2')
+        txt3 = document.getElementById('txt3')
+        txt4 = document.getElementById('txt4')
+        txt1.innerHTML = `Calculando o desconto de 10% para ${pro}...`
+        txt2.innerHTML = `O preço original é R$${val}.`
+        txt3.innerHTML = `Você acaba de receber R$${nub} de desconto (-10%).`
+        txt4.innerHTML = `Assim sendo o valor final a pagar pelo ${pro} é R$${tot}.`
+    }
+</script>
+</body>
+</html>

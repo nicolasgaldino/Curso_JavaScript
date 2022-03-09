@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Rejustar Salário</title>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <input type="button" value="Reajustar Salário" onclick="Clicar()">
+    <section>
+        <h1 id="txt1"></h1>
+         <p id="txt2"></p>
+         <p id="txt3"></p>
+         <p id="txt4"></p>
+    </section>
+<script>
+    function Clicar() {
+        nome = window.prompt('Qual o nome do funcionário?')
+        sal = window.prompt(`Qual é o salário de ${nome}?`)
+        rea = window.prompt(`O salário de ${nome} vai receber um reajuste em qual porcentagem?`)
+        sal1 = Number(sal)
+        rea1 = Number(rea)
+        por = (100 / rea1) * sal1
+        por1 = por / 100
+        tot = por1 + sal1
+        txt1 = document.getElementById('txt1')
+        txt2 = document.getElementById('txt2')
+        txt3 = document.getElementById('txt3')
+        txt4 = document.getElementById('txt4')
+        txt1.innerHTML = `${nome} recebeu um aumento salarial...`
+        txt2.innerHTML = `O salário atual é R$${sal}.`
+        txt3.innerHTML = `Com um aumento de ${rea}%, o salário vai aumentar R$${por1.toFixed(2)} no próximo mês.`
+        txt4.innerHTML = `Assim sendo ${nome} passará a receber R$${tot.toFixed(2)}.`
+    }
+</script>
+</body>
+</html>
